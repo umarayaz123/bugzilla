@@ -1,0 +1,59 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "signup.html" %>
+
+
+<%= form_for( @user, :action =>"create") do |s| %>
+  <%= s.label("Name:") %>
+  <%= s.text_field :name %><br/>
+
+  <br/>
+<%= s.label("Email:") %>
+<%= s.text_field :email %><br/>
+
+  <br/>
+  <%= s.label("Password:") %>
+  <%= s.password_field :password %>
+  <br/>
+
+  <%= s.label("user_type:") %>
+
+  <%= s.select(:user_type, options_for_select([['Developer', 1], ['Manager', 2],['Quality Assurance', 3]])) %> <br/><br/>
+
+
+
+
+    <%= s.submit "sign up" %>
+  <% end %>
+
+
+
+  <%#= form_for @user do |f| %>
+  <%# if @user.errors.any? %>
+    <%#*<div class="error_messages">%>
+      <%#*<h2>Form is invalid</h2>%>
+      <%#*<ul>%>
+        <%# for message in @user.errors.full_messages %>
+          <%#*<li><%= message %></li>%>
+        <%# end %>
+      <%#*</ul>%>
+    <%#*</div>%>
+  <%# end %>
+  <%#*<div class="field">%>
+    <%#= f.label :email %>
+    <%#= f.text_field :email %>
+  <%#*</div>%>
+  <%#*<div class="field">%>
+    <%#= f.label :password %>
+    <%#= f.password_field :password %>
+  <%#*</div>%>
+  <%#*<div class="field">%>
+    <%#= f.label :password_confirmation %>
+    <%#= f.password_field :password_confirmation %>
+  <%#*</div>%>
+  <%#*<div class="actions"><%= f.submit %></div>%>
+<%# end %>
+

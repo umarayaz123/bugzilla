@@ -1,0 +1,68 @@
+<%= form_for(@student) do |f| %>
+
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %>
+        prohibited this student from being saved:</h2>
+
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :files %><br />
+    <%= f.file_field :files, :multiple => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%#*<div>%>
+<%#= form_for Student.new,:url => { :action => "create" }, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+<%#*<div class="row">%>
+<%#*<div class="span16 fileupload-buttonbar">%>
+<%#*<div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>%>
+<%#*<span class="btn success fileinput-button">%>
+<%#*<span>%>
+<%#= t('photos.add_files') %>
+<%#*...</span>%>
+<%#= f.file_field :files, :multiple => true %>
+<%#*</span>%>
+<%#*<button type="submit" class="btn primary start">%>
+<%#= t('photos.start_upload') %>
+<%#*</button>%>
+<%#*<button type="reset" class="btn info cancel">%>
+<%#= t('photos.cancel_upload') %>
+<%#*</button>%>
+<%#*<button type="button" class="btn danger delete">%>
+<%#= t('photos.delete_selected') %>
+<%#*</button>%>
+<%#*<input type="checkbox" class="toggle"/>%>
+<%#*</div>%>
+<%#*</div>%>
+<%#*<br/>%>
+<%#*<div class="row">%>
+<%#*<div class="span16">%>
+<%#*<table class="zebra-striped"><tbody class="files"></tbody></table>%>
+<%#*<div id="loading"> </div>%>
+<%#*</div>%>
+<%#*</div>%>
+<%#*</div>%>
+<%# end %>
+
+
+

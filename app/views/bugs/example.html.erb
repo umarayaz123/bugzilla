@@ -1,0 +1,17 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "example.html" %>
+
+<%= form_for @bug, :html => {:multipart => true} do |bug_form| %>
+
+<p>
+  <%= bug_form.file_field :image %>
+  <br /> <br />
+  </p>
+
+
+  <%= bug_form.submit "Create a bug" %>
+  <% end %>

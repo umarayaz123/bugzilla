@@ -1,0 +1,45 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "index.html" %>
+
+<p>
+
+  <%= link_to 'Create a project', proj_projects_path %>
+</p>
+<table border="1">
+  <tr>
+    <th>User report</th>
+    <th>Description of project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+
+
+  </tr>
+
+  <% @projects.each do |pro| %>
+    <tr>
+      <td><%= pro.user_report %></td>
+      <td><%= pro.desc_project %></td>
+
+    <td><%= link_to 'Show',  %></td>
+    <td><%= link_to 'Edit', edit_project_path %></td>
+    <td><%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete %></td>
+
+
+
+
+  <%#*<td><%= link_to 'Show', book %>
+  <%#*<td><%= link_to 'Edit', edit_book_path(book) %>
+  <%#*<td><%= link_to 'Remove', book, :confirm => 'Are you sure?', :method => :delete %>s
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New book', new_book_path %>

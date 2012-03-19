@@ -1,0 +1,16 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "proj.html" %>
+
+
+<%= form_for( @project, :action =>"create") do |p| %>
+  <%= p.label("Project description:") %>
+  <%= p.text_area :desc_project %><br/>
+
+  <br/>
+    <%= p.submit "Create a project" %>
+  <% end %>
+

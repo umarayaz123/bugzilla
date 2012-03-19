@@ -1,0 +1,70 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "index.html" %>
+<h1>USER INDEX </h1>>
+
+<h1>LIST OF USERS</h1>
+<p>
+
+  <%= link_to 'Create a user', new_user_path %>
+</p>
+
+<%#*<img src="https://graph.facebook.com/<%= fid %/picture">%>
+<%#*<div id="fb-root"></div>%>
+<%#*<script src="//connect.facebook.net/en_US/all.js"></script>%>
+<%#*<script>%>
+<%#*FB.init({%>
+<%#*appId      : '246629502097443',%>
+<%#*channelUrl : '//http://localhost:3000/', // Channel File%>
+<%#*status     : true, // check login status%>
+<%#*cookie     : true, // enable cookies to allow the server to access the session%>
+<%#*xfbml      : true  // parse XFBML%>
+<%#*});%>
+<%#*</script>%>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=246629502097443";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<br/>
+<div class="fb-comments" data-href="http://localhost:3000" data-num-posts="10" data-width="470" meta property="fb:admins" content="1038043578" meta property="fb:app_id" content="246629502097443"></div>
+
+<br/><br/>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>password</th>
+    <th>User_type</th>
+
+  </tr>
+
+  <% @users.each do |u| %>
+    <tr>
+      <td><%= u.name %></td>
+      <td><%= u.email %></td>
+      <td><%= u.crypted_password %></td>
+      <td><%= u.user_type %></td>
+      <td></td>
+
+
+  <%#*<td><%= link_to 'Show', u %>
+      <td><%= link_to 'Edit', edit_user_path(u) %> </td>
+  <%#*<td><%= link_to 'Remove', book, :confirm => 'Are you sure?', :method => :delete %>
+
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New book', new_book_path %>

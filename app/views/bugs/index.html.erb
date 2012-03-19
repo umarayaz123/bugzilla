@@ -1,0 +1,57 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "index.html" %>
+<p>
+  <%= link_to 'Create a Bug', new_bug_path %>
+</p>
+<h1>Listing Bugs</h1>
+
+
+
+
+<table border="0">
+  <tr>
+    <th>Deadline</th>
+    <th>Bug Type</th>
+    <th>Status</th>
+    <th>Image</th>
+
+  </tr>
+
+  <% @bugs.each do |bug| %>
+    <tr>
+
+
+      <td>
+        <%= bug.deadline %>
+      </td>
+      <td>
+        <%= bug.type_bug %>
+      </td>
+      <td>
+        <%= bug.status%>
+      </td>
+      <td>
+        <%= image_tag bug.image_url(:thumb).to_s%>
+      </td>
+
+    
+
+  <%#*<td><%= link_to 'Show', book %>
+  <%#*<td><%= link_to 'Edit', edit_book_path(book) %>
+  <%#*<td><%= link_to 'Remove', book, :confirm => 'Are you sure?', :method => :delete %>
+  <%#*</tr>%>
+    </tr>
+  <% end %>
+
+</table>
+
+
+
+
+
+
+<%#= link_to 'New book', new_book_path %>

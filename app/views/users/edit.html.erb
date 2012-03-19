@@ -1,0 +1,32 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= "edit.html" %>
+<h1>Update your profile</h1>
+
+
+<%= form_for @user do |s| %>
+  <%= s.label("Name:") %>
+  <%= s.text_field :name %><br/>
+
+  <br/>
+<%= s.label("Email:") %>
+<%= s.text_field :email %><br/>
+
+  <br/>
+  <%= s.label("Password:") %>
+  <%= s.password_field :password %>
+  <br/>
+
+  <%= s.label("user_type:") %>
+
+  <%= s.select(:user_type, options_for_select([['Developer', 1], ['Manager', 2],['Quality Assurance', 3]])) %> <br/><br/>
+
+
+
+
+    <%= s.submit "Save Changes" %>
+  <% end %>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= link_to 'HOME', new_home_path %>
+
+<%#*<div id="fb-root"></div>%>
+<%#*<script>(function(d, s, id) {%>
+<%#*var js, fjs = d.getElementsByTagName(s)[0];%>
+<%#*if (d.getElementById(id)) return;%>
+<%#*js = d.createElement(s); js.id = id;%>
+<%#*js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=246629502097443";%>
+<%#*fjs.parentNode.insertBefore(js, fjs);%>
+<%#*}(document, 'script', 'facebook-jssdk'));</script>%>
+
+    <title>Bugzilla</title>
+<%#= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+
+<%= stylesheet_link_tag('jquery.fileupload-ui') %>
+
+<%= csrf_meta_tags %>
+
+
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log out", logout_path %>
+    <% else %>
+      <%= link_to "Sign up", signup_path %> or
+      <%= link_to "log in", login_path %>.
+    <% end %>
+
+<%#= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+
+<%#*<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>%>
+
+<%#*<a href="https://www.facebook.com/dialog/oauth?%>
+<%#*client_id=246629502097443 & redirect_uri=root_url">facebook</a>%>
+<%#*<iframe src="https://www.facebook.com/plugins/like.php?href=YOUR_URL"%>
+<%#*scrolling="no" frameborder="0"%>
+<%#*style="border:none; width:450px; height:80px"></iframe>%>
+
+
+
+  </head>
+  <body>
+
+    <%= yield %>
+
+
+  </body>
+</html>
